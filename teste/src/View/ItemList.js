@@ -9,8 +9,6 @@ justify-content:center;
 align-items:center;
 color: #fff;
 box-sizing: border-box;
-height: 1000px;
-
 `;
 
 const ItemWrapper = styled.div`
@@ -97,28 +95,34 @@ box-sizing: border-box;
 `;
 
 
-const ItemList = () => {
+const ItemList = ({ContentsData}) => {
+    console.log(ContentsData)
     return (
         <ItemListContainer>
-            <ItemWrapper>
-                <div className='item__left'></div>
-                <div className='item__right'>
-                    <div className='item__right__top'>
-                    <p>content Title: sssssssssssssssssssssssssssssssssssssssssss</p>
-                    <ul>
-                        <li></li>
-                        <li>이름</li>
-                    </ul>
-                    </div>
-                    <div className='item__right__bottom'>
-                        <span>포인트</span>
+            {ContentsData.map((el) => {
+                return (
+                    <ItemWrapper key={el.id}>
+                    <img className='item__left' src={el.images} alt="img"></img>
+                    <div className='item__right'>
+                        <div className='item__right__top'>
+                        <p>content Title: sssssssssssssssssssssssssssssssssssssssssss</p>
                         <ul>
-                            <li>숫자 뷰</li>
-                            <li>숫자 찜</li>
+                            <li></li>
+                            <li>이름</li>
                         </ul>
+                        </div>
+                        <div className='item__right__bottom'>
+                            <span>포인트</span>
+                            <ul>
+                                <li>숫자 뷰</li>
+                                <li>숫자 찜</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </ItemWrapper>
+                </ItemWrapper>
+                )
+            })}
+           
         </ItemListContainer>
     )
 }
