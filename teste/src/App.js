@@ -2,6 +2,7 @@ import React from 'react';
 import styled from "styled-components"
 import Navber from './View/Navber';
 import MainSpot from './View/MainSpot';
+import ItemList from './View/ItemList';
 
 const Container = styled.div`
 background-color: #121212;
@@ -19,6 +20,7 @@ function App() {
       <Wrap>
         <Navber />
         <MainSpot />
+        <ItemList />
       </Wrap>
     </Container>
   );
